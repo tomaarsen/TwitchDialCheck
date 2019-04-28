@@ -47,10 +47,14 @@ class DialCheck:
         self.tracked = []
 
         # Start the websocket.
-        self.ws = TwitchWebsocket(self.host, self.port, self.message_handler, live=False)
-        self.ws.login(self.nick, self.auth)
-        self.ws.join_channel(self.chan)
-        self.ws.add_capability(["membership", "tags", "commands"])
+        self.ws = TwitchWebsocket(host=self.host, 
+                                  port=self.port,
+                                  chan=self.chan,
+                                  nick=self.nick,
+                                  auth=self.auth,
+                                  callback=self.message_handler,
+                                  capability=["membership", "tags", "commands"],
+                                  live=False)
 
     def setSettings(self, host, port, chan, nick, auth, t):
         self.host = host
