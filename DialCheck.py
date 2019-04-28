@@ -55,6 +55,7 @@ class DialCheck:
                                   callback=self.message_handler,
                                   capability=["membership", "tags", "commands"],
                                   live=False)
+        self.ws.start_bot()
 
     def setSettings(self, host, port, chan, nick, auth, t):
         self.host = host
