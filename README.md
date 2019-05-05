@@ -10,9 +10,9 @@ This Bot was written for one streamer in particular, which means this script lik
 This Bot will read Twitch chat looking for messages such as "Dial", "dangDial", "D I A L", and so forth.
 Ten seconds after the most recent of these messages the bot will output a "Dial Percentage" based on this formula:
 
-`trues = amount of DIAL messages`
-`ratio = trues / total messages found in the span`
-`percentage = trues / (amount of current viewers / 1.5) * 100`
+`trues = amount of DIAL messages`<br>
+`ratio = trues / total messages found in the span`<br>
+`percentage = trues / (amount of current viewers / 1.5) * 100`<br>
 `result = min(percentage * ratio * 10 * 0.9 + 10 + random.uniform(-1, 1), 100)`
 
 In short, it's a linear formula based on the percentage of chat that was involved in the messages, and the ratio of DIAL messages relative to other messages, ranging from 10% to 100%.
