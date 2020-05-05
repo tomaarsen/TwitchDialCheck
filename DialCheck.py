@@ -67,7 +67,7 @@ class DialCheck:
 
     def isAccepted(self, message):
         # Check if message contains a DIAL message of any kind
-        return "D I A L" in message or "dangDial" in message or "dial" in message.lower()
+        return "d i a l" in message or "dangdial" in message or "dial" in message.lower()
 
     def message_handler(self, m):
         if m.type == "PRIVMSG":
